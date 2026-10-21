@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b35">
+  <meta name="description" content="ADVERTA — Promotion & Advertising Services. Creative advertising and brand design to help your business stand out.">
+  <title>ADVERTA | Promotion & Advertising Services</title>
+  <style>
+    :root {
+      --navy: #101b35;
+      --blue: #2563eb;
+      --light: #f4f7fc;
+      --ink: #172033;
+      --muted: #667085;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid #e7ebf3;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: var(--navy);
+    }
+
+    .logo span { color: var(--blue); }
+
+    .navlinks {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .navlinks a { color: var(--ink); }
+
+    .button {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-weight: 750;
+      transition: .2s;
+    }
+
+    .button:hover { opacity: .88; transform: translateY(-2px); }
+
+    .button-outline {
+      background: transparent;
+      border: 1px solid #cbd5e1;
+      color: var(--navy);
+    }
+
+    .hero {
+      background:
+        radial-gradient(ellipse at 90% 10%, #263f70 0, transparent 38%),
+        var(--navy);
+      color: white;
+      padding: 90px 0 85px;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #a9c5ff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(39px, 7vw, 70px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin: 0 0 22px;
+      max-width: 760px;
+    }
+
+    .hero h1 span { color: #76a3ff; }
+
+    .hero p {
+      color: #d5deef;
+      font-size: 17px;
+      max-width: 570px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero .button-outline {
+      border-color: #637394;
+      color: white;
+    }
+
+    .trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 38px;
+      color: #d5deef;
+      font-size: 13px;
+    }
+
+    section { padding: 75px 0; }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 38px;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(29px, 4vw, 42px);
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      border: 1px solid #e5eaf3;
+      border-radius: 17px;
+      padding: 25px;
+      background: white;
+    }
+
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 49px;
+      height: 49px;
+      background: #edf3ff;
+      color: var(--blue);
+      border-radius: 13px;
+      font-size: 23px;
+      margin-bottom: 17px;
+    }
+
+    .service h3 { margin: 0 0 8px; font-size: 19px; }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .portfolio { background: var(--light); }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .portfolio-card {
+      min-height: 215px;
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      background: linear-gradient(145deg, #172b50, #3567bd);
+      color: white;
+    }
+
+    .portfolio-card:nth-child(2) {
+      background: linear-gradient(145deg, #111827, #4b5563);
+    }
+
+    .portfolio-card:nth-child(3) {
+      background: linear-gradient(145deg, #153c45, #159c91);
+    }
+
+    .portfolio-card .mini {
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: 800;
+      opacity: .8;
+    }
+
+    .portfolio-card h3 {
+      font-size: 25px;
+      line-height: 1.2;
+      margin: 20px 0 7px;
+    }
+
+    .portfolio-card p {
+      font-size: 13px;
+      margin: 0;
+      opacity: .85;
+    }
+
+    .portfolio-note {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-panel {
+      background: var(--navy);
+      color: white;
+      padding: 34px;
+      border-radius: 20px;
+    }
+
+    .about-panel h3 { font-size: 28px; line-height: 1.25; }
+
+    .about-panel p { color: #d5deef; }
+
+    .about-copy h2 {
+      font-size: 36px;
+      line-height: 1.2;
+    }
+
+    .about-copy p { color: var(--muted); }
+
+    .contact {
+      background: var(--light);
+    }
+
+    .contact-box {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+      padding: 40px 24px;
+      background: white;
+      border: 1px solid #e5eaf3;
+      border-radius: 20px;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(28px, 5vw, 40px);
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin: 0 auto 24px;
+      max-width: 500px;
+    }
+
+    footer {
+      background: #0b1327;
+      color: #d5deef;
+      padding: 30px 0;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    footer .logo { color: white; font-size: 22px; }
+
+    footer p { margin: 5px 0 0; color: #aab6ca; }
+
+    @media (max-width: 720px) {
+      .navlinks { gap: 12px; }
+      .navlinks .hide-mobile { display: none; }
+      .navlinks .button { padding: 10px 12px; }
+      .hero { padding: 68px 0 60px; }
+      section { padding: 58px 0; }
+      .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 24px; }
+      .portfolio-card { min-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a href="#home" class="logo">ADVER<span>TA</span></a>
+    <div class="navlinks">
+      <a class="hide-mobile" href="#services">Services</a>
+      <a class="hide-mobile" href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a class="button" href="#contact">Let's Talk</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <span class="eyebrow">Promotion & Advertising Services</span>
+      <h1>Your Brand Deserves <span>To Be Seen.</span></h1>
+      <p>
+        We help businesses present themselves with confidence through
+        creative advertising, engaging visuals and thoughtful brand design.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#contact">Start a Project &rarr;</a>
+        <a class="button button-outline" href="#services">Explore Services</a>
+      </div>
+      <div class="trust">
+        <span>✦ Creative Ideas</span>
+        <span>✦ Professional Presentation</span>
+        <span>✦ Business-Focused Design</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">What We Do</span>
+        <h2>Creative Services for Growing Brands</h2>
+        <p>Give your business a stronger visual presence with services designed to make an impression.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service">
+          <div class="service-icon">✳</div>
+          <h3>Flyer & Graphics Design</h3>
+          <p>Eye-catching promotional designs for products, services, events and business announcements.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">▶</div>
+          <h3>AI Video Adverts</h3>
+          <p>Creative short-form advertising videos to introduce your products and communicate your message.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">✦</div>
+          <h3>Business Promotion</h3>
+          <p>Present your offers and services clearly so potential customers can understand what you do.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">◈</div>
+          <h3>Brand Identity</h3>
+          <p>Consistent visual ideas to help your business look recognisable and professional.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">▧</div>
+          <h3>Product Advertising</h3>
+          <p>Creative promotional materials that showcase your products and their key features.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">↗</div>
+          <h3>Custom Ad Concepts</h3>
+          <p>Fresh advertising concepts tailored to your goals, audience and business identity.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Our Creative Direction</span>
+        <h2>Ideas Made to Stand Out</h2>
+        <p>Every business has a story. The right creative presentation helps tell it.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <article class="portfolio-card">
+          <span class="mini">ADVER﻿TA / 001</span>
+          <div>
+            <h3>Make Your Brand Memorable.</h3>
+            <p>Promotional design concepts</p>
+          </div>
+        </article>
+        <article class="portfolio-card">
+          <span class="mini">ADVER﻿TA / 002</span>
+          <div>
+            <h3>Showcase What You Do.</h3>
+            <p>Product advertising concepts</p>
+          </div>
+        </article>
+        <article class="portfolio-card">
+          <span class="mini">ADVER﻿TA / 003</span>
+          <div>
+            <h3>Turn Ideas Into Visuals.</h3>
+            <p>Creative video concepts</p>
+          </div>
+        </article>
+      </div>
+      <p class="portfolio-note">These are introductory concept cards. Replace them with your real completed projects as your portfolio grows.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-panel">
+        <span class="eyebrow">The ADVERTA Approach</span>
+        <h3>Good advertising starts with a clear message.</h3>
+        <p>We focus on creative presentation, clear communication and designs that reflect each business's identity.</p>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">About ADVERTA</span>
+        <h2>Helping Businesses Present Their Best.</h2>
+        <p>ADVERTA is a promotion and advertising service focused on helping business owners communicate their offers through creative visual content.</p>
+        <p>Whether you're introducing a new product, announcing a service or building your brand identity, let's develop a creative way to present your business.</p>
+        <a class="button" href="#contact">Work With Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <span class="eyebrow">Let's Create Something</span>
+        <h2>Ready to Promote Your Business?</h2>
+        <p>Tell us about your business, your idea and the kind of advert you need. Let's discuss your next project.</p>
+        <!-- Replace YOURNUMBER with your WhatsApp number, including country code, without + or spaces. -->
+        <a class="button" href="https://wa.me/YOURNUMBER" target="_blank" rel="noopener noreferrer">Contact ADVERTA on WhatsApp ↗</a>
+        <p style="font-size:12px;margin-top:18px;margin-bottom:0;">Please update the WhatsApp link before sharing this website.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <a href="#home" class="logo">ADVER<span>TA</span></a>
+      <p>Promotion & Advertising Services</p>
+    </div>
+    <div>© <span id="year"></span> ADVERTA. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
